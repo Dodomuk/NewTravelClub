@@ -1,0 +1,27 @@
+.App {
+    text-align: center;
+  }
+  .navtop {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    min-height: 7vh;
+    background: #69f0ae;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-links{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+  }
+  .navStyle:visited{
+    color: white;
+  }
+  .active {
+    text-decoration: none;
+  }
+  
