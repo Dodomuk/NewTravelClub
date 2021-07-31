@@ -10,18 +10,12 @@
     color: white;
     text-decoration: none;
   }
-  
-  .nav-links{
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
-  }
   .navStyle:visited{
     color: white;
   }
   .active {
     text-decoration: none;
   }
-  
+  .loginBtn{
+   padding-left : 300px;
+  }

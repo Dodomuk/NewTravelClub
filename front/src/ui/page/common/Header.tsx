@@ -2,7 +2,7 @@ import { RouteComponentProps } from "react-router";
 import React, { Component } from "react";
 import "../../resource/Header.css";
 import { Link, NavLink } from "react-router-dom";
-
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 interface Props extends RouteComponentProps {}
 
@@ -42,6 +42,7 @@ class Header extends Component {
             }
           }
         })}
+        <AccountCircleIcon className="loginBtn" style={{fontSize : "large" , width:"70px" , height:"70px"}}/>
       </nav>
     );
   }
