@@ -2,21 +2,21 @@
 import React from 'react';
 import autobind from 'autobind-decorator';
 import { inject, observer } from 'mobx-react';
-
-import { ClubsService } from '../../../service';
-import ClubListView from './view/ClubListView';
+import { MembersService } from '../../../service';
+import MemberJoin from './crud/memberView/MemberCrudView';
+import MemberListView from './view/MemberListView';
 
 
 interface Props {
   //
-  clubsService?: ClubsService;
+  membersService?: MembersService;
    
   keyword?: string;
 }
-@inject(ClubsService.instanceName)
+@inject(MembersService.instanceName)
 @autobind
 @observer
-class ClubListContainer extends React.Component<Props> {
+class MemberListContainer extends React.Component<Props> {
   //
   static defaultProps = {
     keyword: '',
@@ -38,28 +38,28 @@ class ClubListContainer extends React.Component<Props> {
 
   init() {
     //
-    const { clubsService, keyword } = this.props;
+    const { membersService, keyword } = this.props;
     if (keyword) {
-      clubsService!.findClubsByName(keyword);
+      membersService!.findMembersByName(keyword);
         }
     else {
-      clubsService!.findAllClubs();
+      console.log(membersService!.findAllMembers());
+
     }
   }
 
   render() {
     //
-    const { clubs } = this.props.clubsService!;
+    const {members} = this.props.membersService!;
+
     return (
-      <>
-      <ClubListView
-        clubs={clubs}
+      <MemberListView
+      members={members}
       />
-      </>
     );
   }
 
   
 }
 
-export default ClubListContainer;
+export default MemberListContainer;

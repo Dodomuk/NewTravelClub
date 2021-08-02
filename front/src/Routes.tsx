@@ -9,12 +9,12 @@ import {
 
 import { ClubsMainContainer, MainContainer } from "./ui/page";
 import { Header } from "./ui/page/common";
+import MembersMainContainer from "./ui/page/members/MembersMainContainer";
 
 class Routes extends React.PureComponent {
   //
   render() {
     //
-    const menuList = [];
 
     return (
       <BrowserRouter>
@@ -26,6 +26,7 @@ class Routes extends React.PureComponent {
             render={() => <Redirect exact from="/" to="/main" />}
           />
           <Route exact path="/clubs" render={() => <ClubsMainContainer />} />
+          <Route exact path="/members" render={() => <MembersMainContainer />} />
           <Route exact path="/main" render={() => <MainContainer />} />
         </Switch>
       </BrowserRouter>

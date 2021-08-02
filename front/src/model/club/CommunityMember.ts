@@ -15,7 +15,7 @@ class CommunityMember extends Entity {
   address: Address[];
 
 
-  constructor(email: string, name: string, phoneNumber: string) {
+  constructor(email: string, name: string, phoneNumber: string , birthDay : string) {
     //
     super();
 
@@ -23,7 +23,7 @@ class CommunityMember extends Entity {
     this.name = name;
     this.phoneNumber = phoneNumber;
     this.nickName = '';
-    this.birthDay = '';
+    this.birthDay = birthDay;
     this.address = [];
   }
 

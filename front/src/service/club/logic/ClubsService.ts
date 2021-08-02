@@ -37,7 +37,6 @@ class ClubsService {
     const clubs = await this.travelClubApi.findClubsByName(name);
 
     runInAction(() => this.clubs = clubs);
-
     return clubs;
   }
 

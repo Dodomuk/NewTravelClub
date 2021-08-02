@@ -1,21 +1,21 @@
 .App {
-    text-align: center;
-  }
-  .navtop {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    min-height: 7vh;
-    background: #69f0ae;
-    color: white;
-    text-decoration: none;
-  }
-  .navStyle:visited{
-    color: white;
-  }
-  .active {
-    text-decoration: none;
-  }
-  .loginBtn{
-   padding-left : 300px;
-  }
+  text-align: center;
+}
+.navtop {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  min-height: 7vh;
+  background: #69f0ae;
+  color: white;
+  text-decoration: none;
+}
+.navStyle:visited{
+  color: white;
+}
+.active {
+  text-decoration: none;
+}
+.loginBtn{
+ padding-left : 300px;
+}

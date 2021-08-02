@@ -6,7 +6,6 @@ class App extends React.Component {
   //
   render() {
     //
-    const menuList =['main','club','member'];
 
     return (
       <Store>

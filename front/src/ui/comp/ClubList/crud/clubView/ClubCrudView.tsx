@@ -3,10 +3,11 @@ import autobind from 'autobind-decorator';
 import { observer } from 'mobx-react';
 import { Grid, TextField, Button } from '@material-ui/core';
 import { Save, Update, Delete } from '@material-ui/icons';
-import { AddButton, TrashButton } from '../../../resource/ButtonColor';
+import { AddButton, TrashButton } from '../../../../resource/ButtonColor';
 
 interface Props{
-  setClub : Function
+  setClub : Function,
+  updateClub : Function
 }
 interface State{
   name : string,
@@ -22,7 +23,7 @@ class ClubCrudView extends React.Component<Props,State> {
   }
 
   render() {
-    const {setClub} = this.props;
+    const {setClub,updateClub} = this.props;
     const {name,intro} = this.state;
     
 
@@ -70,6 +71,7 @@ class ClubCrudView extends React.Component<Props,State> {
                 variant="contained"
                 color="default"
                 startIcon={<Update />}
+                onClick={() => {updateClub(name , intro)}}
               >
                 Update
               </TrashButton>

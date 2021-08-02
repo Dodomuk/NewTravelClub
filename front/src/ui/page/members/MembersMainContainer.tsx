@@ -3,7 +3,7 @@ import autobind from "autobind-decorator";
 import { RouteComponentProps, withRouter } from "react-router";
 import { Grid } from "@material-ui/core";
 
-import { ClubList, ClubCrud, SearchBox } from "../../comp";
+import { MemberList, MemberCrud, SearchBox } from "../../comp";
 
 interface Props extends RouteComponentProps {}
 
@@ -13,7 +13,7 @@ interface State {
 }
 
 @autobind
-class ClubsMainContainer extends React.Component<Props, State> {
+class MembersMainContainer extends React.Component<Props, State> {
   //
   state: State = {
     keyword: "",
@@ -44,13 +44,13 @@ class ClubsMainContainer extends React.Component<Props, State> {
     return (
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <ClubCrud onSuccess={this.onSuccess}/>
+          <MemberCrud onSuccess={this.onSuccess}/>
           <SearchBox keyword={keyword} onChange={this.onChange} />
-          <ClubList keyword={keyword} />
+          <MemberList keyword={keyword} />
         </Grid>
       </Grid>
     );
   }
 }
 
-export default withRouter(ClubsMainContainer);
+export default withRouter(MembersMainContainer);

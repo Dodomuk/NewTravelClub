@@ -35,7 +35,6 @@ class ClubService {
   async modifyClub(travelClub: TravelClub): Promise<void> {
     //
     const nameValueList = TravelClub.asNameValues(travelClub);
-
     return this.travelClubApi.modifyClub(travelClub.id, nameValueList);
   }
 
