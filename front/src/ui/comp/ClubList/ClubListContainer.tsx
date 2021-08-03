@@ -5,7 +5,7 @@ import { inject, observer } from 'mobx-react';
 
 import { ClubsService } from '../../../service';
 import ClubListView from './view/ClubListView';
-
+import '../../resource/ClubNavLinkStyle.css';
 
 interface Props {
   //

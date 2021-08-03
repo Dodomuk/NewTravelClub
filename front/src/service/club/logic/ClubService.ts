@@ -32,10 +32,10 @@ class ClubService {
     return this.travelClubApi.registerClub(travelClubCdo);
   }
 
-  async modifyClub(travelClub: TravelClub): Promise<void> {
+  async modifyClub(id : string,travelClub: TravelClub): Promise<void> {
     //
     const nameValueList = TravelClub.asNameValues(travelClub);
-    return this.travelClubApi.modifyClub(travelClub.id, nameValueList);
+    return this.travelClubApi.modifyClub(id, nameValueList);
   }
 
   async removeClub(clubId: string): Promise<void> {

@@ -4,8 +4,6 @@ import "../../resource/Header.css";
 import { Link, NavLink } from "react-router-dom";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
-interface Props extends RouteComponentProps {}
-
 class Header extends Component {
   render() {
     const menuList = ["main", "clubs", "members"];

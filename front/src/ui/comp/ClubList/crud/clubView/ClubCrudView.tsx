@@ -7,7 +7,8 @@ import { AddButton, TrashButton } from '../../../../resource/ButtonColor';
 
 interface Props{
   setClub : Function,
-  updateClub : Function
+  updateClub : Function,
+  deleteClub : Function
 }
 interface State{
   name : string,
@@ -23,7 +24,7 @@ class ClubCrudView extends React.Component<Props,State> {
   }
 
   render() {
-    const {setClub,updateClub} = this.props;
+    const {setClub,updateClub,deleteClub} = this.props;
     const {name,intro} = this.state;
     
 
@@ -80,6 +81,7 @@ class ClubCrudView extends React.Component<Props,State> {
                 variant="contained"
                 color="default"
                 startIcon={<Delete />}
+                onClick={() => {deleteClub(name)}}
               >
                 Delete
               </Button>
