@@ -6,7 +6,7 @@ import { MembershipsService } from '../../../service';
 import MembershipListView from './view/MembershipListView';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 
-interface Props extends RouteComponentProps{
+interface Props extends RouteComponentProps<{},{},{clubId :string}>{
   //
   membershipsService?: MembershipsService;
   keyword?: string;
@@ -42,16 +42,15 @@ class MembershipListContainer extends React.Component<Props> {
         membershipsService!.findMembershipByMemberId(keyword);
         }
     else {
-    //   membershipsService!.findAllMembers();
-
-    }
+      console.log(membershipsService!.findMembershipByClubId(this.props.location.state.clubId));
+      }
   }
 
   render() {
     //
     const {members} = this.props.membershipsService!;
-    const state = this.props.location.state as any;
-    console.log(state.clubId);
+    const {clubId} = this.props.location.state;
+
     return(
         <MembershipListView
         members={members}

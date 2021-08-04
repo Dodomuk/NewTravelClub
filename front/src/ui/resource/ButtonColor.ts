@@ -1,5 +1,5 @@
 import { Button, withStyles } from "@material-ui/core";
-import { grey, lightGreen } from "@material-ui/core/colors";
+import { blueGrey, grey, lightGreen } from "@material-ui/core/colors";
  
 export let AddButton = withStyles((theme) => ({
     root: {
@@ -17,6 +17,16 @@ export let TrashButton = withStyles((theme) => ({
         backgroundColor: lightGreen[500],
         '&:hover': {
             backgroundColor: lightGreen[700],
+        },
+    },
+}))(Button);
+
+export let MembershipRegisterButton = withStyles((theme) => ({
+    root: {
+        color: theme.palette.getContrastText(blueGrey[500]),
+        backgroundColor: blueGrey[500],
+        '&:hover': {
+            backgroundColor: blueGrey[700],
         },
     },
 }))(Button);

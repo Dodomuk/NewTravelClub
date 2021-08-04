@@ -22,7 +22,6 @@ class MembershipService {
     this.membershipApi = membershipApi;
   }
   
-  
   async registerMembership(membership: Membership): Promise<string> {
     //
     

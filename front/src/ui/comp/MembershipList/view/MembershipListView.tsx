@@ -24,10 +24,10 @@ class MembershipListView extends React.Component<Props> {
     return (
      <>
 
-      <Table>
+      <Table style={{width:'90%',  margin : '0 auto' , alignContent:'center'}}>
         <TableHead>
           <TableRow>
-            <TableCell align="center">MemberId</TableCell>
+            <TableCell align="center">Member</TableCell>
             <TableCell align="center">Role</TableCell>
             <TableCell align="center">JoinDate</TableCell>
           </TableRow>
