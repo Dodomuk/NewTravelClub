@@ -9,7 +9,6 @@ interface Props {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-
 @autobind
 class SearchBoxView extends React.Component<Props> {
   //

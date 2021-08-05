@@ -64,17 +64,10 @@ class ClubCrudContainer extends React.Component<Props, State> {
 
     stateOnChange(event: React.ChangeEvent<HTMLInputElement>) {
 
-        const {club} = this.state;
-
         const key = event.target.id;
         const value = event.target.value;
 
-        console.log(event.target.id);
-        console.log(event.target.value);
-        console.log(this.state.club);
         this.setState({club: {...this.state.club, [key]: value}});
-        // const newClub = _.set(club,key,value);
-        // this.setState({ club : newClub });
     }
 
     async registerClub() {

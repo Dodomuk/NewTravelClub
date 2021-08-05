@@ -60,6 +60,7 @@ class MemberListView extends React.Component<Props> {
               members.map((communityMember: CommunityMember, index: number) => (
                 <TableRow key={communityMember.id} hover onClick={() => 
                 this.props.history.push({pathname : '/membershipCrud' , state:{
+                  memberId : communityMember.id,
                   memberName : communityMember.name ,
                   memberEmail : communityMember.email ,
                   memberPhoneNumber : communityMember.phoneNumber ,

@@ -11,6 +11,7 @@ class MembershipApi {
 
   registerMembership(membershipCdo: MembershipCdo): Promise<string> {
     //
+    console.log(membershipCdo);
     return axios.post(`${this.membershipApiUrl}`, membershipCdo)
       .then((response) => response && response.data);
   }

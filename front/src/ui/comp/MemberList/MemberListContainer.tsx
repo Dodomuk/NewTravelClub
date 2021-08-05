@@ -3,7 +3,6 @@ import React from 'react';
 import autobind from 'autobind-decorator';
 import { inject, observer } from 'mobx-react';
 import { MembersService } from '../../../service';
-import MemberJoin from '../MemberCrud/view/MemberCrudView';
 import MemberListView from './view/MemberListView';
 
 

@@ -22,10 +22,8 @@ class MembershipService {
     this.membershipApi = membershipApi;
   }
   
-  async registerMembership(membership: Membership): Promise<string> {
+  async registerMembership(membershipCdo: MembershipCdo): Promise<string> {
     //
-    
-    const membershipCdo = MembershipCdo.fromModel(membership);
     return this.membershipApi.registerMembership(membershipCdo);
   }
 
