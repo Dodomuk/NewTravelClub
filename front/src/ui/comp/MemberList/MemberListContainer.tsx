@@ -38,11 +38,12 @@ class MemberListContainer extends React.Component<Props> {
   init() {
     //
     const { membersService, keyword } = this.props;
+
     if (keyword) {
       membersService!.findMembersByName(keyword);
         }
     else {
-      console.log(membersService!.findAllMembers());
+     membersService!.findAllMembers();
 
     }
   }

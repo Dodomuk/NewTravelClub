@@ -32,11 +32,6 @@ class MembersMainContainer extends React.Component<Props, State> {
 
   }
 
-  // flagSwitch() {
-  //   let flag = !this.state.flag;
-  //   this.setState({ flag });
-  // }
-
   render() {
     //
     const { keyword } = this.state;

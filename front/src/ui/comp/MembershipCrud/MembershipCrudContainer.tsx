@@ -4,7 +4,7 @@ import {inject, observer} from "mobx-react";
 import {ClubsService, MembershipService} from "../../../service";
 import {RouteComponentProps, withRouter} from "react-router-dom";
 import MembershipCrudView from "./view/MembershipCrudView";
-import {Membership, MembershipCdo, RoleInClub, TravelClub} from "../../../model";
+import { MembershipCdo, RoleInClub, TravelClub} from "../../../model";
 
 interface Props extends RouteComponentProps {
     membershipService?: MembershipService;
@@ -31,36 +31,24 @@ class MembershipCrudContainer extends React.Component<Props, State> {
         membershipCdo: new MembershipCdo('','',RoleInClub.Member)
     }
 
-    async componentDidMount() {
+     async componentDidMount() {
        await this.init();
     }
 
-    async componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any) {
-
-        if(prevState.clubs !== this.state.clubs){
-            await this.init();
-        }
-        console.log(prevState.clubs);
-        console.log(this.state.clubs);
-    }
-
     async init(){
-       const clubs = await this.props.ClubsService?.findAllClubs();
-       console.log(clubs);
-       this.setState({clubs : clubs!});
+       const club = await this.props.ClubsService?.findAllClubs();
+        this.setState({clubs : club!});
     }
 
     selectRole(event : React.ChangeEvent<HTMLInputElement>){
         const value = event.target.value;
 
-        if(value === 'President'){
+        value === 'President' ?
             this.setState({membershipCdo :
-                    {...this.state.membershipCdo,role : RoleInClub.President}});
-        }else{
+                    {...this.state.membershipCdo,role : RoleInClub.President}})
+        :
             this.setState({membershipCdo :
                     {...this.state.membershipCdo,role : RoleInClub.Member}});
-        }
-
     }
 
     onChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -69,26 +57,20 @@ class MembershipCrudContainer extends React.Component<Props, State> {
 
         this.setState({membershipCdo :
                 {...this.state.membershipCdo,clubId: value, memberId: name}});
-    }
-
-    async confirmationStatus(clubId: string, memberId: string) {
 
     }
 
-    async addMembership() {
-
+     addMembership() {
         const {membershipService} = this.props;
-
         const {membershipCdo} = this.state;
 
         console.log(this.state.membershipCdo);
 
-        const newMembership = membershipCdo;
-
-        await membershipService?.registerMembership(newMembership);
+        membershipService?.registerMembership(membershipCdo);
 
         window.alert('맴버십이 등록되었습니다.');
 
+        this.props.history.go(-1);
     }
 
     render() {

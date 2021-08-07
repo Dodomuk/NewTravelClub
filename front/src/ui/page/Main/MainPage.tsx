@@ -3,7 +3,7 @@ import { Component } from "react";
 class MainPage extends Component {
   render() {
     return (
-        "ㅎㅇ"
+        "안녕하세요 잘부탁드립니다."
     );
   }
 }

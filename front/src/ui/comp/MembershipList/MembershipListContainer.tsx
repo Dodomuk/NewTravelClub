@@ -42,7 +42,7 @@ class MembershipListContainer extends React.Component<Props> {
         membershipsService!.findMembershipByMemberId(keyword);
         }
     else {
-      console.log(membershipsService!.findMembershipByClubId(this.props.location.state.clubId));
+      membershipsService!.findMembershipByClubId(this.props.location.state.clubId);
       }
   }
 
