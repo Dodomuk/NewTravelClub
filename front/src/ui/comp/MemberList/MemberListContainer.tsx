@@ -7,7 +7,7 @@ import MemberListView from './view/MemberListView';
 
 
 interface Props {
-  //
+
   membersService?: MembersService;
    
   keyword?: string;
